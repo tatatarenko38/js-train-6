@@ -60,8 +60,8 @@ function hasProperty(obj, property) {
   // Використовуємо оператор "in" для перевірки наявності властивості
   // Запишимо умову якщо властивість існує повертає текст Property ${property} exists,
   // інашке повертаємо Property ${property} does not exist.
-  for (const key in fruit) {
-    if (fruit.key === property) {
+  for (const key in obj) {
+    if (key === property) {
       return `Property ${property} exists`;
     } else {
       return `Property ${property} does not exist`;
@@ -258,11 +258,11 @@ function addProperty(array) {
   // Додаємо нову властивість customProperty до прототипу Array зі значенням myProperty
   // Повертаємо переданий масив з новою властивістю
 
-  Array.prototype.customProperty = myProperty;
+  Array.prototype.customProperty = "myProperty";
 
-  return array.customProperty;
+  return array;
 }
-let newArr = [1, 2, 3, 4, 5];
+let newArr = addProperty([1, 2, 3, 4, 5]);
 console.log("Завдання 14 ====================================");
 // Створимо масив newArr з новою властивістю за допомогої нашої функції в яку передамо [1, 2, 3, 4, 5]
 
